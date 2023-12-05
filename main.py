@@ -84,21 +84,10 @@ def running():
 
         driver1.get(urrl)
 
-        money = WebDriverWait(driver1, 10).until(
+        money = fgfg = WebDriverWait(driver1, 10).until(
                     EC.presence_of_element_located((By.ID, "new-money-ballans"))).text
 
-        print(money)
-
-        if int(money) >= 50:
-            WebDriverWait(driver1, 10).until(
-                    EC.presence_of_element_located((By.XPATH, '//*[@id="leftcolumn"]/div[1]/center[2]/a[2]'))).click()
-            availablty = WebDriverWait(driver1, 10).until(
-                    EC.presence_of_element_located((By.XPATH, '//*[@id="aj-content"]/form/center/center/center[2]/center/div/div[4]/div/div/div/span'))).text
-            print(availablty)
-            rating = WebDriverWait(driver1, 10).until(
-                    EC.presence_of_element_located((By.ID, "reyt-user-block"))).text
-            if availablty != "Временно недоступно" and int(rating) >= 10:
-                print("yes")
+        print(money)            
      
             
         while True:
