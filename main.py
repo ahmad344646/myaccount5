@@ -217,7 +217,7 @@ def running():
         print("Cookies copied successfully..")
         driver1.quit()
 
-        time.sleep(25)
+        time.sleep(7)
 
 def sdsf():
     while True:
