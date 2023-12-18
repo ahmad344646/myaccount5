@@ -205,11 +205,12 @@ def running():
         if int(rating) < 11:
             WebDriverWait(driver1, 70).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="maincolumn"]/div/div[1]/div[2]/a[4]'))).click()
-            page_source = driver1.page_source
-            soup = BeautifulSoup(page_source, 'html.parser')
-            last_b_tag = soup.find_all('b')[-1] if soup.find_all('b') else None
-            print(f"today total views: {last_b_tag.text}")
-            if int(last_b_tag.text) > 100:
+            dvfdfg = WebDriverWait(driver1, 70).until(
+                        EC.element_to_be_clickable((By.XPATH, ' //*[@id="maincolumn"]/div/div[1]/center/span[1]'))).text
+            number_match = re.search(r'\d+', dvfdfg)
+            extracted_number = int(number_match.group())
+            print(f"today total views: {extracted_number}")
+            if int(extracted_number) > 100:
                 WebDriverWait(driver1, 70).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="maincolumn"]/div/div[1]/center/span[2]'))).click()
                 time.sleep(1)
