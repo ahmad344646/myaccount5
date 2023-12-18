@@ -49,7 +49,8 @@ def running():
         #driver1.set_window_size(800, 600)
         #driver1.minimize_window()
         driver1.get("https://profitcentr.com/")
-        driver1.maximize_window()
+        new_window_size = {'width': 1552, 'height': 840}
+        driver1.set_window_size(new_window_size['width'], new_window_size['height'])
         print("Please wait...")
         
         # Load cookies from file
@@ -208,7 +209,7 @@ def running():
             soup = BeautifulSoup(page_source, 'html.parser')
             last_b_tag = soup.find_all('b')[-1] if soup.find_all('b') else None
             print(f"today total views: {last_b_tag.text}")
-            if int(last_b_tag.text) > 300:
+            if int(last_b_tag.text) > 100:
                 WebDriverWait(driver1, 70).until(
                         EC.element_to_be_clickable((By.XPATH, '//*[@id="maincolumn"]/div/div[1]/center/span[2]'))).click()
                 time.sleep(1)
