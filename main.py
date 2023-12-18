@@ -88,7 +88,7 @@ def running():
                     EC.presence_of_element_located((By.ID, "new-money-ballans"))).text
 
         print(money)
-	rating = WebDriverWait(driver1, 10).until(
+        rating = WebDriverWait(driver1, 10).until(
                     EC.presence_of_element_located((By.ID, "reyt-user-block"))).text
         print(f"your rating: {rating}") 
      
