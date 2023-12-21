@@ -108,7 +108,8 @@ def running():
             action.click_and_hold(slider).move_by_offset(offset, 0).release().perform()
             time.sleep(4)        
             WebDriverWait(driver1, 60).until(
-                    EC.presence_of_element_located((By.XPATH, "/html/body/div[8]/table[2]/tbody/tr/td[2]/div/div/div/div/div/div[2]/form/center[2]/input"))).click()
+                    EC.presence_of_element_located((By.XPATH, '//*[@id="aj-content"]/form/center[2]/input'))).click()
+            
             print("widthdraw successful..")
      
             
